@@ -1,3 +1,6 @@
+// This file tests your connection to a remote db based on your .env file.
+// Can be run from root project directory with 'node server/database/test.js'.
+
 require('dotenv').config({ path: './.env' });
 console.log("MONGO_URI:", process.env.MONGO_URI);
 
