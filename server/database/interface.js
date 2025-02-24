@@ -3,10 +3,10 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const User = require('../models/User'); // adjust path as needed
-const Note = require('../models/Note'); // adjust path as needed
+const User = require('../models/User');
+const Note = require('../models/Note');
 
-// DATABASE
+// CONNECTION
 
 /**
  * Connects to the MongoDB database using the connection string from the environment variables.
@@ -48,7 +48,6 @@ async function createUser(email, password) {
   const user = new User({
     email,
     password,
-    createdAt: new Date() // This is optional because the schema default handles it.
   });
   return await user.save();
 }
@@ -122,7 +121,7 @@ async function createNote(user, title, content = "") {
     ownerID: user._id,
     title,
     content,
-    tags: [], // no tags
+    //tags: [], // no tags
   });
   return await note.save();
 }
