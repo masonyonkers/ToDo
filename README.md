@@ -1,6 +1,6 @@
 # ToDo App
 
-This guide will walk you through setting up the project, configuring MongoDB locally, and testing the connection.
+This guide will walk you through setting up the project, configuring MongoDB locally, and testing the connection. If you are not hosting MongoDB locally, skip to **8** after installing MongoDB on your machine.
 
 ---
 
@@ -170,6 +170,11 @@ npm run dev
 ```
 
 ---
+
+## **8. Connecting to Remote DB**
+```
+mongosh -u "username" -p "password" --authenticationDatabase "db_name" url/db_name
+```
 
 ## **You're All Set!**
 You have successfully:
