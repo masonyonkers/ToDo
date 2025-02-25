@@ -116,12 +116,10 @@ async function setUserPassword(id, newPassword) {
  * @returns {Promise<Object>} - The newly created note document.
  */
 async function createNote(user, title, content = "") {
-  // Create a new note with no tags and the current time (default behavior)
   const note = new Note({
     ownerID: user._id,
     title,
     content,
-    //tags: [], // no tags
   });
   return await note.save();
 }
